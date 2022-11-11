@@ -10,3 +10,16 @@
 -- Searching an index is like searching in a phone book, or back of the 
 -- book for list of dictionary. It is fast because they are organzied, instead
 -- of giving a big messy data, that you have to look through it one by one. 
+
+-- But a database's index is different from a printed phone book, because
+-- when new data are added. You don't have room to "add" or "remove" entry.
+-- Therefore it uses 2 data structure to solve this problem.
+-- 1. Doubly linked list and a search tree.
+
+-- The Index Leaf Nodes!
+-- Author mentioned it isn't possible to store the data sequentially.
+-- Because it will consume too much room. Instead the system uses a doubly
+-- linked list to store the precending and following node. It enable the
+-- database to read index forward / backward and easily insert a new record.
+
+-- Root Node > Branch Nodes > Leaf Nodes.
