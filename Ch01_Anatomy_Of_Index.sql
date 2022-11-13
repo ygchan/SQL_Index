@@ -23,3 +23,4 @@
 -- database to read index forward / backward and easily insert a new record.
 
 -- Root Node > Branch Nodes > Leaf Nodes.
+-- The leaf nodes can go up and down using linked list.
