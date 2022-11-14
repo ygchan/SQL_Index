@@ -28,3 +28,11 @@
 -- Tree Traversal is a very efficient operation, it works almost instantly
 -- even on very large dataset. Primary becasue of tree balancing. Secondly
 -- is because of the logarithmic growth of the tree depth.
+
+-- Why is an index slow?
+-- 1. When the lookup entry is not uquie, it must read additional entries
+-- 2. A leaf node might contain hundreds of hit and they can scattered across
+-- many table blocks.
+
+-- The following of leaf node chain and fetching of table data are the main 
+-- reasons of the slow index lookup.
