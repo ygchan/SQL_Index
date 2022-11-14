@@ -24,3 +24,7 @@
 
 -- Root Node > Branch Nodes > Leaf Nodes.
 -- The leaf nodes can go up and down using linked list.
+
+-- Tree Traversal is a very efficient operation, it works almost instantly
+-- even on very large dataset. Primary becasue of tree balancing. Secondly
+-- is because of the logarithmic growth of the tree depth.
