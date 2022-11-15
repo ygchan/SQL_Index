@@ -43,3 +43,19 @@
 -- Example: 3 = log_7 of x
 -- 7^3 = x
 -- y = log_b of x means b^y = x
+-- Author mentioned, the higher the basis, the shallower the tree, the faster
+-- the traversal.
+
+-- There are 3 distinct operations that describe a basic index lookup.
+
+-- 1. Index unique scan. The database requires a unique constraint to ensure
+-- that the search criteria will match no more than one entry. It performs
+-- the tree traversal only.
+
+-- 2. Index range scan. This is the fallback operation if multiple entries
+-- possibly match the search criteria. It performs the tree traversal
+-- and follow the leaf node chain to find all matching entries.
+
+-- 3. Table access by index rowid. This is often performed for every matched
+-- record from a preceding index scan operation. It retrieves the row from
+-- the table.
