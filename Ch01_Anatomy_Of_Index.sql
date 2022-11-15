@@ -36,3 +36,10 @@
 
 -- The following of leaf node chain and fetching of table data are the main 
 -- reasons of the slow index lookup.
+
+-- Logarithmic Scalability
+-- Definition: The logarithm of a number to given base is the power or exponent
+-- to which the base must be raised in order to produce the number.
+-- Example: 3 = log_7 of x
+-- 7^3 = x
+-- y = log_b of x means b^y = x
