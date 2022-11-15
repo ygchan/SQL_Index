@@ -4,3 +4,9 @@
 -- There are 3 operations with index lookup, 1) index unique scan, 2) index range scan
 -- table access by index rowid.
 
+-- The where clause defines the search condition of an SQL statement.
+-- It falls into the core functional domain of index: find data quickly.
+-- But many of us write them very carelessly, so that the database has to 
+-- scan a large part of the index. This chapter will teach us how to spot them.
+-- How many write where statement to use as much of the index as possible.
+-- Some standard anti-patterns and present alternative ways to do better.
