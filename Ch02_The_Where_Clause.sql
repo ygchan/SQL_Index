@@ -10,3 +10,8 @@
 -- scan a large part of the index. This chapter will teach us how to spot them.
 -- How many write where statement to use as much of the index as possible.
 -- Some standard anti-patterns and present alternative ways to do better.
+
+-- Last thing about slow index from Chapter 1.
+-- When your index is unique, then there are no risk on trigger more than
+-- one table access. George: so, how to design a database with our project
+-- in mind that will use only a unquie index?
