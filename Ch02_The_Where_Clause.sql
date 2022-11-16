@@ -19,3 +19,20 @@
 -- Concatenated indexes
 -- Note when you have a concatenated index (composite index).
 -- The column order of it has huge impact on its usability.
+
+create unique index employee_pk 
+  on employees (employee_id, subsidiary_id);
+  
+select *
+from employees
+where employee_id = 123
+  and subsidiary_id = 30;
+  
+-- This query is instant. Because it is using an unique index scan
+-- But if we don't use the complete index, only subsidiary_id
+-- then it will be doing a full table scan!
+
+-- This will be table access full
+select *
+from employees
+where subsidiary_id = 30;
