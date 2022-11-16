@@ -15,3 +15,7 @@
 -- When your index is unique, then there are no risk on trigger more than
 -- one table access. George: so, how to design a database with our project
 -- in mind that will use only a unquie index?
+
+-- Concatenated indexes
+-- Note when you have a concatenated index (composite index).
+-- The column order of it has huge impact on its usability.
