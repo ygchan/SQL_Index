@@ -81,3 +81,6 @@ on employees (upper(last_name));
 
 -- Reminder: what does index range range scan mean?
 -- Answer: The database traverses the B-tree and follows the leaf node chain.
+
+-- Instruction on how to update index statistics
+-- https://www.sqlshack.com/sql-server-statistics-and-how-to-perform-update-statistics-in-sql
