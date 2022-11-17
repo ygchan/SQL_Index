@@ -84,3 +84,8 @@ on employees (upper(last_name));
 
 -- Instruction on how to update index statistics
 -- https://www.sqlshack.com/sql-server-statistics-and-how-to-perform-update-statistics-in-sql
+
+-- SQL Server new tip!
+-- You can add a computed column on the table that can be indexed
+alter table employees add last_name_up as upper(last_name);
+create index emp_up_name on employees (last_name_up);
