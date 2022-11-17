@@ -78,3 +78,6 @@ where blackbox(...) = 'george';
 
 create index emp_up_name
 on employees (upper(last_name));
+
+-- Reminder: what does index range range scan mean?
+-- Answer: The database traverses the B-tree and follows the leaf node chain.
