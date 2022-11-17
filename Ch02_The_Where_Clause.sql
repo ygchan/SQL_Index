@@ -89,3 +89,7 @@ on employees (upper(last_name));
 -- You can add a computed column on the table that can be indexed
 alter table employees add last_name_up as upper(last_name);
 create index emp_up_name on employees (last_name_up);
+
+-- Documentation: Specify Computed Columns in a Table
+-- https://learn.microsoft.com/en-us/sql/relational-databases/tables/specify-computed-columns-in-a-table?view=sql-server-ver16
+-- Not physically stored in the table
