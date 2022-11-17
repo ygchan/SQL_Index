@@ -48,3 +48,33 @@ where subsidiary_id = 30;
 -- If you don't have the left most column, you CAN'T use it.
 -- The doubly linked list link to the next round, but in that employee
 -- example, it doesn't link to the next subsidiary with id = 20.
+
+-- Functions
+-- When a string has upper case/lower case. You indexed on either/or.
+-- How to get around this limiation of the last name = upper case?
+-- Author said: you can try to do this.
+
+select first_name, last_name, phone_number
+from employees
+where upper(last_name) = upper('george');
+
+-- George: However, in SQL Server, case insensitive by default
+-- So this does not matter at my current team :)
+
+-- But if you take a look at the execution plan, it goes back to full table
+-- scan again. Because the search is NOT on last_name, rather on 
+-- upper(last_name). From database perspective, this is entirely different.
+
+-- From the SQL Optimizer point of view 
+select first_name
+from employees
+where blackbox(...) = 'george';
+
+-- Tip: Replace the function name with BLACKBOX to understand how the optimizer
+-- point of view.
+
+-- To solve this:
+-- We need an index that covers the actual search term.
+
+create index emp_up_name
+on employees (upper(last_name));
