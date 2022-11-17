@@ -43,3 +43,8 @@ where subsidiary_id = 30;
 -- the index lookup is using 1 block, nothing else is being read.
 -- whereas, a full table scan read larger chunk at a time (multi-block
 -- read). 
+
+-- Important: A Concatenated index is one index across multiple columns
+-- If you don't have the left most column, you CAN'T use it.
+-- The doubly linked list link to the next round, but in that employee
+-- example, it doesn't link to the next subsidiary with id = 20.
