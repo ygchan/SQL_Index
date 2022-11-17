@@ -36,3 +36,10 @@ where employee_id = 123
 select *
 from employees
 where subsidiary_id = 30;
+
+-- Table Access Full: sometimes can be the most efficient operation
+-- when retrieving a large part of the table
+-- This because when index lookup happens, it has overhead, but when
+-- the index lookup is using 1 block, nothing else is being read.
+-- whereas, a full table scan read larger chunk at a time (multi-block
+-- read). 
