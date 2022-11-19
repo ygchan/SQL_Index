@@ -93,3 +93,17 @@ create index emp_up_name on employees (last_name_up);
 -- Documentation: Specify Computed Columns in a Table
 -- https://learn.microsoft.com/en-us/sql/relational-databases/tables/specify-computed-columns-in-a-table?view=sql-server-ver16
 -- Not physically stored in the table
+
+-- Parameterized queries
+-- Bind parameters - dynamic parameters are an alternative way to
+-- pass data to the database. Instead of putting the values
+-- you just use a placeholder like ?, :name or @name
+-- and provide the actual values using separate API call.
+
+-- Benefit #1: Prevent SQL Injection
+-- Benefit #2: Performance (cache execution plan for SQL Server!)
+
+-- 99 rows selected
+select first_name, last_name
+from employees
+where subsidiary_id = 20;
