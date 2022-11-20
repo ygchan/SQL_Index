@@ -107,3 +107,7 @@ create index emp_up_name on employees (last_name_up);
 select first_name, last_name
 from employees
 where subsidiary_id = 20;
+
+-- Question: is it better to index all columns, or single index for all
+-- columns? Author suggested to use one index for all columns
+-- but pay a lot of care to the order.
