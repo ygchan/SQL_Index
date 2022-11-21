@@ -133,3 +133,6 @@ where upper(last_name) < ?
 
 -- ** Bitmap indexes are very weak (not usable) for OLTP.
 -- online transactional processing
+-- Many database offer a hybrid solution: to convert the results
+-- of several Btree scans into bitmap in memory. But the problem
+-- is this will consume a lot of memory (???).
