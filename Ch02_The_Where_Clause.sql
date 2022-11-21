@@ -111,3 +111,16 @@ where subsidiary_id = 20;
 -- Question: is it better to index all columns, or single index for all
 -- columns? Author suggested to use one index for all columns
 -- but pay a lot of care to the order.
+
+-- Example Query
+select first_name, last_name, date_of_birth
+from employees
+where upper(last_name) < ?
+  and date_of_birth < ?;
+  
+-- An index can only support 1 range condition as access predicates
+-- Supporting 2 independent range requires a second axis.
+-- Like a chessboard.
+-- This index should have the more selective column first
+
+-- So it will be "business unit" and than "year" :) 
