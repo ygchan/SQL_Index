@@ -136,3 +136,20 @@ where upper(last_name) < ?
 -- Many database offer a hybrid solution: to convert the results
 -- of several Btree scans into bitmap in memory. But the problem
 -- is this will consume a lot of memory (???).
+
+-- FILTERED INDEX (SQL SERVER)!
+-- You can only specify the rows that are indexed.
+
+select message
+from messages
+where processed = 'N'
+  and receiver = ?;
+  
+-- Fetching all (only) unprocessed messages for a specific recipient.
+-- Messages that are already processed are rarely needed.
+
+create index messages_todo on messages(receiver)
+where processed = 'N';
+
+-- The index only contains the rows that satisfy the where clause.
+-- SQL Server does not allow function nor OR operator.
