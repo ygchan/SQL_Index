@@ -153,3 +153,7 @@ where processed = 'N';
 
 -- The index only contains the rows that satisfy the where clause.
 -- SQL Server does not allow function nor OR operator.
+
+-- The section about NULL indexing was confusing.
+-- To create an index to filter for Null, need to add a contraints of 
+-- not null. otherwise it will do a full table scan.
