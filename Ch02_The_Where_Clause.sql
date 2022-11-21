@@ -179,3 +179,9 @@ begin
   );
 end
 go
+
+-- Tip: Write query for continuous period as explicit range condition
+select *
+from dbo.employee
+where join_date >= trunc(sysdate)
+  and join_date <  trunc(sysdate + interval '1' day);
