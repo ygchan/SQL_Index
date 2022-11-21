@@ -124,3 +124,12 @@ where upper(last_name) < ?
 -- This index should have the more selective column first
 
 -- So it will be "business unit" and than "year" :) 
+
+-- Data warehouse use a special purpose index type to
+-- solve that type of problem: bitmap index.
+-- Adv: they can be combined easily.
+-- but if you know the query in advance, you can create
+-- a TAILORED multi-column B-tree index.
+
+-- ** Bitmap indexes are very weak (not usable) for OLTP.
+-- online transactional processing
