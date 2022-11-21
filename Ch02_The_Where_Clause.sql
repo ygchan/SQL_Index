@@ -162,3 +162,20 @@ where processed = 'N';
 -- Date type: Do this instead.
 create index index_name on table_name (trunc(sale_date));
 -- but if you use it inconsistently, then you will need 2 indexed :(
+
+create function quarter_begin (@dt datetime)
+returns datetime
+begin
+  return dateadd (qq, datediff (qq, 0, @dt), 0)
+end
+go
+
+create function quarter_end (@dt datetime)
+returns datetime
+begin
+  return dateadd
+  (
+    ms, -3, dateadd(mm, 3, dbo.quarter_begin(@dt))  
+  );
+end
+go
