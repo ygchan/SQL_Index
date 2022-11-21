@@ -157,3 +157,8 @@ where processed = 'N';
 -- The section about NULL indexing was confusing.
 -- To create an index to filter for Null, need to add a contraints of 
 -- not null. otherwise it will do a full table scan.
+
+-- Obfuscated condition (anti-patterns)
+-- Date type: Do this instead.
+create index index_name on table_name (trunc(sale_date));
+-- but if you use it inconsistently, then you will need 2 indexed :(
