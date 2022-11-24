@@ -199,3 +199,12 @@ where numeric_string = '42';
 select *
 from dbo.employee
 where numeric_string = 42;
+
+-- On other words, if the column is a numeric type, make sure use int to store it.
+-- Unless it is very large number range, then use bigint.
+
+select *
+from dbo.employee
+where numeric_string = '42';
+
+-- The dtabase will always transfer this string to a number.
