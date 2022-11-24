@@ -185,3 +185,17 @@ select *
 from dbo.employee
 where join_date >= trunc(sysdate)
   and join_date <  trunc(sysdate + interval '1' day);
+  
+-- Numeric Strings
+-- Numerics strings are numbers that are stored in text colums. Although it is a very
+-- bad practice, it does not render index useless if you treat it as string
+
+select *
+from dbo.employee
+where numeric_string = '42';
+
+-- However, if you compare it to a number, the index will fail...
+
+select *
+from dbo.employee
+where numeric_string = 42;
