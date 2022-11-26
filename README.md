@@ -9,3 +9,5 @@ https://www.amazon.com/Performance-Explained-Everything-Developers-about/dp/3950
 https://learn.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms?view=sql-server-ver16
 <p>
 https://towardsdatascience.com/getting-started-with-sql-server-management-studio-part-1-step-by-step-setup-63428650a1e0
+<p>
+Happy Thanks Giving!
