@@ -208,3 +208,4 @@ from dbo.employee
 where numeric_string = '42';
 
 -- The dtabase will always transfer this string to a number.
+-- If you have an important column, index both string and number?
