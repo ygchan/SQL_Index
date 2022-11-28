@@ -235,3 +235,10 @@ where (subsidiary_id = @sub_id or @sub_id is null)
 select first_name, last_name, subsidiary_id, employee_id
 from dbo.employees
 where upper(last_name) = @name;
+
+select a, b
+from table_name
+where 3 * a + 5 = b
+
+-- An example of math function based index
+create index math on table_name (3*a - b)
