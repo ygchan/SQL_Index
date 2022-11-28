@@ -217,3 +217,16 @@ where numeric_string = '42';
 -- it analyzes each statement when received and generates a reasonable
 -- execution plan immediately. The overhead introduced by runtime
 -- optimization can be minimized with bind variable. 
+
+-- Assuming you want to write a toolbox query and write the following
+select first_name, last_name, subsidiary_id, employee_id
+from dbo.employees
+where (subsidiary_id = @sub_id or @sub_id is null)
+  and (employee_id = @emp_id or @emp_id is null)
+  and (upper(last_name) = @name or @name is null);
+
+-- This query will result in a full table scan. 
+-- Because any of the condition can be canceled at run time.
+-- The database is preparing for the worst case - if all filters are disabled.
+
+-- This is a worst performance anti-patterns of all.
