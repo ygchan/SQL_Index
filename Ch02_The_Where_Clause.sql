@@ -209,3 +209,11 @@ where numeric_string = '42';
 
 -- The dtabase will always transfer this string to a number.
 -- If you have an important column, index both string and number?
+
+-- There was mention of date/date time index logic and its approach
+-- But I didn't fully understand that part in Chapter 2.
+
+-- Smart Logic: query optimizer (panner) works at runtime.
+-- it analyzes each statement when received and generates a reasonable
+-- execution plan immediately. The overhead introduced by runtime
+-- optimization can be minimized with bind variable. 
