@@ -230,3 +230,8 @@ where (subsidiary_id = @sub_id or @sub_id is null)
 -- The database is preparing for the worst case - if all filters are disabled.
 
 -- This is a worst performance anti-patterns of all.
+-- Instead please do this. (KISS principle)
+
+select first_name, last_name, subsidiary_id, employee_id
+from dbo.employees
+where upper(last_name) = @name;
