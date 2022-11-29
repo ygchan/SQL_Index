@@ -16,3 +16,6 @@ where section = @my_section
 -- Any idea what might be the problem?
 
 -- Answer: it was using a composite index, but id2 is after id1.
+-- When index is used properly, correctly. It will be log time or near 
+-- constant time. But when it isn't used properly, it will be linear
+-- as the data grow larger.
