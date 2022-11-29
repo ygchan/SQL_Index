@@ -19,3 +19,7 @@ where section = @my_section
 -- When index is used properly, correctly. It will be log time or near 
 -- constant time. But when it isn't used properly, it will be linear
 -- as the data grow larger.
+
+-- The 2 ingredients of index lookup slow
+-- table access and scanning a wide index range.
+-- Pay attention to the predicate information.
