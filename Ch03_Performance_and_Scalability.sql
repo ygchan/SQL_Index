@@ -23,3 +23,6 @@ where section = @my_section
 -- The 2 ingredients of index lookup slow
 -- table access and scanning a wide index range.
 -- Pay attention to the predicate information.
+
+-- create index scale_slow on scale_data(section, id1, id2);
+-- create index scale_fast on scale_data(section, id2, id1);
